@@ -1,0 +1,22 @@
+<hr>
+<app-heroe></app-heroe>
+
+<p>Listado</p>
+
+<ul *ngIf="heroes.length > 0; else message">
+  <li *ngFor="let heroe of heroes">{{heroe}}</li>
+</ul>
+<ng-template #message>
+  <p>
+    <i>Lista de heroes vacia</i>
+  </p>
+</ng-template>
+
+<br>
+<button (click)="eliminarHeroe()">Eliminar un heroe</button>
+<br>
+<br>
+<div *ngIf="heroeBorrado">
+  <strong>Heroe borrado: </strong> <span>{{heroeBorrado}}</span>
+</div>
+
